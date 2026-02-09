@@ -16,35 +16,40 @@ export const featureCategories: FeatureCategory[] = [
   {
     id: "conversion-tracking",
     eyebrow: "Core",
-    title: "Signal-Based Conversion Tracking",
+    title: "Closed-Loop Signal Engine",
     description:
-      "Feed real booking and revenue data back to ad platforms so the algorithm optimizes for actual customers.",
+      "GoFuse creates a verified signal chain from ad click to booked revenue — feeding ground truth back to ad platforms and strengthening how search engines understand your business.",
     icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6" />`,
     features: [
       {
         title: "Google Ads GCLID Capture",
         description:
-          "Automatically capture Google Click IDs on every form submission for precise attribution.",
+          "Automatically capture Google Click IDs on every form submission — the starting point for closed-loop attribution.",
       },
       {
-        title: "Automatic Conversion Events",
+        title: "Verified Conversion Events",
         description:
-          "Fire conversion events to Google Ads when a lead is booked — no manual tagging needed.",
+          "Fire conversion events to Google Ads when a lead is actually booked — not just when a form is filled. This is the ground truth most advertisers never send.",
       },
       {
-        title: "Custom Conversion Values",
+        title: "Real Revenue as Conversion Value",
         description:
-          "Send actual quote and booking revenue as conversion values so Google can optimize for ROI.",
+          "Send actual booking revenue back to Google so it optimizes for ROI, not volume. The algorithm learns what a valuable customer looks like.",
       },
       {
-        title: "UTM Parameter Tracking",
+        title: "Full-Lifecycle UTM Attribution",
         description:
-          "Track source, medium, campaign, term, and content parameters across the full lead lifecycle.",
+          "Track source, medium, campaign, term, and content across the entire lead lifecycle — from first click to closed deal.",
       },
       {
-        title: "Revenue Attribution",
+        title: "Entity Data Enrichment",
         description:
-          "Attribute real revenue back to the ad, keyword, and campaign that generated it.",
+          "GoFuse uses your real booking data to build a proprietary profile of what you sell, where you serve, and what converts — strengthening your digital presence over time.",
+      },
+      {
+        title: "Compounding Authority",
+        description:
+          "Every closed deal enriches your data set. Over time, this creates a flywheel: better ad targeting, stronger organic signals, and a competitive moat that's uniquely yours.",
       },
       {
         title: "Meta & More Coming Soon",
