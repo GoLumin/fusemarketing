@@ -13,12 +13,12 @@ const navLinks = [
 ];
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300 bg-bg-primary border-b border-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-2 text-xl font-bold">
-        <span class="gradient-text">GoFuse</span>
+        <span class="text-text-primary">GoFuse</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -26,16 +26,16 @@ const navLinks = [
         {navLinks.map((link) =>
           link.children ? (
             <div class="relative group">
-              <button class="text-gray-300 hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
+              <button class="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-1 cursor-pointer">
                 {link.label}
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div class="bg-navy-800 border border-border rounded-lg py-2 min-w-48 shadow-xl">
+                <div class="bg-bg-primary border border-border py-2 min-w-48 shadow-xl">
                   {link.children.map((child) => (
-                    <a href={child.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-navy-700 transition-colors">
+                    <a href={child.href} class="block px-4 py-2 text-sm text-text-secondary hover:text-text-primary hover:bg-bg-secondary transition-colors">
                       {child.label}
                     </a>
                   ))}
@@ -43,7 +43,7 @@ const navLinks = [
               </div>
             </div>
           ) : (
-            <a href={link.href} class="text-gray-300 hover:text-white transition-colors">
+            <a href={link.href} class="text-text-secondary hover:text-text-primary transition-colors">
               {link.label}
             </a>
           )
@@ -52,7 +52,7 @@ const navLinks = [
       </nav>
 
       <!-- Mobile Hamburger -->
-      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white cursor-pointer" aria-label="Toggle menu">
+      <button id="mobile-menu-btn" class="md:hidden text-text-secondary hover:text-text-primary cursor-pointer" aria-label="Toggle menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -61,20 +61,20 @@ const navLinks = [
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 backdrop-blur-md border-t border-border">
+  <div id="mobile-menu" class="hidden md:hidden bg-bg-primary border-t border-border">
     <div class="px-4 py-4 space-y-2">
       {navLinks.map((link) =>
         link.children ? (
           <div>
-            <p class="px-3 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">{link.label}</p>
+            <p class="px-3 py-2 text-sm font-semibold text-text-tertiary uppercase tracking-wider">{link.label}</p>
             {link.children.map((child) => (
-              <a href={child.href} class="block px-6 py-2 text-gray-300 hover:text-white transition-colors">
+              <a href={child.href} class="block px-6 py-2 text-text-secondary hover:text-text-primary transition-colors">
                 {child.label}
               </a>
             ))}
           </div>
         ) : (
-          <a href={link.href} class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+          <a href={link.href} class="block px-3 py-2 text-text-secondary hover:text-text-primary transition-colors">
             {link.label}
           </a>
         )
@@ -93,9 +93,9 @@ const navLinks = [
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 20) {
-      header.classList.add("bg-navy-950/90", "backdrop-blur-md", "border-b", "border-border");
+      header.classList.add("shadow-sm");
     } else {
-      header.classList.remove("bg-navy-950/90", "backdrop-blur-md", "border-b", "border-border");
+      header.classList.remove("shadow-sm");
     }
   });
 

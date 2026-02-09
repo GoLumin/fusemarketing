@@ -76,13 +76,13 @@ const industries = [
         {steps.map((step, i) => (
           <div class="relative text-center">
             {i < steps.length - 1 && (
-              <div class="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-gradient-to-r from-accent-indigo to-accent-cyan opacity-30"></div>
+              <div class="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-border"></div>
             )}
-            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-accent-indigo to-accent-cyan text-white text-xl font-bold mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 bg-accent text-white text-xl font-bold mb-6">
               {step.number}
             </div>
-            <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
-            <p class="text-gray-400 leading-relaxed max-w-sm mx-auto">{step.description}</p>
+            <h3 class="text-xl font-semibold text-text-primary mb-3">{step.title}</h3>
+            <p class="text-text-secondary leading-relaxed max-w-sm mx-auto">{step.description}</p>
           </div>
         ))}
       </div>
@@ -90,21 +90,21 @@ const industries = [
   </section>
 
   <!-- Benefits + Form -->
-  <section class="py-16 md:py-24 bg-navy-900/50">
+  <section class="py-16 md:py-24 bg-bg-secondary">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
         <!-- Benefits -->
         <div>
-          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+          <h2 class="text-2xl md:text-3xl font-bold text-text-primary mb-6">
             Why teams choose GoFuse
           </h2>
           <div class="space-y-4 mb-8">
             {benefits.map((benefit) => (
               <div class="flex items-start gap-3">
-                <svg class="w-5 h-5 text-accent-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span class="text-gray-300">{benefit}</span>
+                <span class="text-text-secondary">{benefit}</span>
               </div>
             ))}
           </div>
@@ -112,41 +112,41 @@ const industries = [
 
         <!-- Demo Request Form -->
         <div>
-          <div class="bg-surface border border-border rounded-xl p-6 md:p-8">
-            <h3 class="text-xl font-semibold text-white mb-6">Request a Demo</h3>
+          <div class="bg-white border border-border p-6 md:p-8">
+            <h3 class="text-xl font-semibold text-text-primary mb-6">Request a Demo</h3>
             <form class="space-y-4">
               <div>
-                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <label for="name" class="block text-sm font-medium text-text-secondary mb-1">Name</label>
                 <input type="text" id="name" name="name" required
-                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  class="w-full px-4 py-3 bg-white border border-border text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
                   placeholder="Your name" />
               </div>
               <div>
-                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <label for="email" class="block text-sm font-medium text-text-secondary mb-1">Email</label>
                 <input type="email" id="email" name="email" required
-                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  class="w-full px-4 py-3 bg-white border border-border text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
                   placeholder="you@company.com" />
               </div>
               <div>
-                <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Company</label>
+                <label for="company" class="block text-sm font-medium text-text-secondary mb-1">Company</label>
                 <input type="text" id="company" name="company"
-                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  class="w-full px-4 py-3 bg-white border border-border text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors"
                   placeholder="Your company" />
               </div>
               <div>
-                <label for="industry" class="block text-sm font-medium text-gray-300 mb-1">Industry</label>
+                <label for="industry" class="block text-sm font-medium text-text-secondary mb-1">Industry</label>
                 <select id="industry" name="industry"
-                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white focus:outline-none focus:border-accent-indigo transition-colors">
-                  <option value="" class="text-gray-500">Select your industry</option>
+                  class="w-full px-4 py-3 bg-white border border-border text-text-primary focus:outline-none focus:border-accent transition-colors">
+                  <option value="" class="text-text-tertiary">Select your industry</option>
                   {industries.map((industry) => (
                     <option value={industry}>{industry}</option>
                   ))}
                 </select>
               </div>
               <div>
-                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <label for="message" class="block text-sm font-medium text-text-secondary mb-1">Message</label>
                 <textarea id="message" name="message" rows="4"
-                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors resize-none"
+                  class="w-full px-4 py-3 bg-white border border-border text-text-primary placeholder-text-tertiary focus:outline-none focus:border-accent transition-colors resize-none"
                   placeholder="Tell us about your business and what you're looking for..."></textarea>
               </div>
               <Button variant="primary" class="w-full">Request Demo</Button>
@@ -166,14 +166,14 @@ const industries = [
       />
       <div class="space-y-4">
         {faqs.map((faq) => (
-          <details class="group bg-surface border border-border rounded-xl">
-            <summary class="flex items-center justify-between cursor-pointer p-6 text-white font-semibold">
+          <details class="group bg-bg-secondary border border-border">
+            <summary class="flex items-center justify-between cursor-pointer p-6 text-text-primary font-semibold">
               {faq.question}
-              <svg class="w-5 h-5 text-gray-400 shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-5 h-5 text-text-tertiary shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
               </svg>
             </summary>
-            <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+            <div class="px-6 pb-6 text-text-secondary leading-relaxed">
               {faq.answer}
             </div>
           </details>

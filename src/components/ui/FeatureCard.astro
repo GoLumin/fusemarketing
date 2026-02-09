@@ -7,14 +7,14 @@ interface Props {
 const { title, description } = Astro.props;
 ---
 
-<div class="bg-surface border border-border rounded-lg p-5 hover:border-border-light transition-colors">
+<div class="bg-bg-secondary border border-border p-5 hover:border-border-light transition-colors">
   <div class="flex items-start gap-3">
-    <svg class="w-5 h-5 text-accent-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
     </svg>
     <div>
-      <h4 class="text-sm font-semibold text-white mb-1">{title}</h4>
-      <p class="text-sm text-gray-400 leading-relaxed">{description}</p>
+      <h4 class="text-sm font-semibold text-text-primary mb-1">{title}</h4>
+      <p class="text-sm text-text-secondary leading-relaxed">{description}</p>
     </div>
   </div>
 </div>

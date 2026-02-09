@@ -1,19 +1,35 @@
 @import "tailwindcss";
 
 @theme {
+  /* Light theme colors - Fluent AI inspired */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #fafafa;
+  
+  --color-text-primary: #242424;
+  --color-text-secondary: #616161;
+  --color-text-tertiary: #707070;
+  
+  --color-border: #e0e0e0;
+  --color-border-light: #d1d1d1;
+  
+  /* Microsoft Fluent blue accent */
+  --color-accent: #0f6cbd;
+  --color-accent-hover: #115ea3;
+  --color-accent-light: #ebf3fc;
+  
+  /* Keep old colors for reference but migrate away */
   --color-navy-950: #0a0f1e;
   --color-navy-900: #0d1321;
   --color-navy-800: #111827;
   --color-navy-700: #1a2332;
   --color-navy-600: #243044;
 
-  --color-accent-indigo: #6366f1;
-  --color-accent-cyan: #06b6d4;
+  --color-accent-indigo: #0f6cbd;
+  --color-accent-cyan: #0f6cbd;
 
-  --color-surface: #141b2d;
-  --color-surface-light: #1e293b;
-  --color-border: #1e293b;
-  --color-border-light: #334155;
+  --color-surface: #ffffff;
+  --color-surface-light: #f5f5f5;
 
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
@@ -26,22 +42,22 @@
   }
 
   body {
-    @apply bg-white text-gray-700 font-sans;
+    @apply bg-bg-primary text-text-secondary font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-gray-900 font-semibold tracking-tight;
+    @apply text-text-primary font-semibold tracking-tight;
   }
 }
 
 @utility gradient-text {
-  @apply bg-gradient-to-r from-accent-indigo to-accent-cyan bg-clip-text text-transparent;
+  @apply text-accent font-semibold;
 }
 
 @utility glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3), 0 0 60px rgba(6, 182, 212, 0.1);
+  box-shadow: none;
 }
 
 @utility glow-sm {
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.2), 0 0 30px rgba(6, 182, 212, 0.05);
+  box-shadow: none;
 }

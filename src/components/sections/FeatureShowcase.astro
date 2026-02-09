@@ -8,21 +8,18 @@ const features = [
     title: "Capture Intent, Not Just Contact Info",
     description: "Every form submission captures the full intent signal — what they need, where they found you, and the exact ad click that brought them in. This is the ground truth that most marketing tools never collect.",
     points: ["Full intent capture with UTM & GCLID tracking", "Lead deduplication & status pipelines", "Multi-campaign forms with unique attribution"],
-    gradient: "from-accent-indigo to-purple-500",
   },
   {
     eyebrow: "Quote Engine",
     title: "Dynamic Quotes That Build Your Data Advantage",
     description: "Real-time pricing builds a proprietary data set of what your market actually pays — by service, by zone, by season. This isn't just a calculator. It's the ground truth that powers everything downstream.",
     points: ["Mileage-based pricing via Google Maps", "Zone & tiered pricing with dynamic discounts", "Every quote enriches your business intelligence"],
-    gradient: "from-purple-500 to-accent-cyan",
   },
   {
     eyebrow: "Closed-Loop Validation",
     title: "The Trust Loop That Compounds",
     description: "When a click becomes a booking, GoFuse creates a verified signal chain: the ad platform learns what a real customer looks like, and your digital presence is strengthened by data-backed proof of what you actually do, where you do it, and how well you do it.",
     points: ["Verified conversion signals back to Google Ads", "Proprietary data strengthens your entity authority", "Compounds across paid and organic over time"],
-    gradient: "from-accent-cyan to-accent-indigo",
   },
 ];
 ---
@@ -40,18 +37,16 @@ const features = [
         <div class={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8 md:gap-16`}>
           <!-- Visual -->
           <div class="flex-1 w-full">
-            <div class={`bg-gradient-to-br ${feature.gradient} rounded-2xl p-px`}>
-              <div class="bg-navy-900 rounded-2xl p-8 md:p-12">
-                <div class="space-y-3">
-                  {feature.points.map((point) => (
-                    <div class="flex items-center gap-3">
-                      <svg class="w-5 h-5 text-accent-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span class="text-gray-300">{point}</span>
-                    </div>
-                  ))}
-                </div>
+            <div class="border border-border bg-bg-secondary p-8 md:p-12">
+              <div class="space-y-3">
+                {feature.points.map((point) => (
+                  <div class="flex items-center gap-3">
+                    <svg class="w-5 h-5 text-accent shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span class="text-text-secondary">{point}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -61,10 +56,10 @@ const features = [
             <p class="text-sm font-semibold uppercase tracking-widest gradient-text mb-3">
               {feature.eyebrow}
             </p>
-            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-text-primary mb-4">
               {feature.title}
             </h3>
-            <p class="text-gray-400 leading-relaxed mb-6">
+            <p class="text-text-secondary leading-relaxed mb-6">
               {feature.description}
             </p>
             <Button href="/features" variant="ghost" size="sm">Learn more &rarr;</Button>

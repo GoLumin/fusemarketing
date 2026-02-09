@@ -35,12 +35,12 @@ const integrations = [
 
 <section class="py-12 md:py-16 border-y border-border">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <p class="text-center text-sm text-gray-500 uppercase tracking-widest mb-8">
+    <p class="text-center text-sm text-text-tertiary uppercase tracking-widest mb-8">
       Integrates with
     </p>
     <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
       {integrations.map((item) => (
-        <div key={item.name} class="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors group">
+        <div key={item.name} class="flex items-center gap-2 text-text-tertiary hover:text-text-secondary transition-colors group">
             <svg class="w-6 h-6" viewBox="0 0 512 512" fill="none"> 
               {item.icons.map((path, index) => (
                 <path 
