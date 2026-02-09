@@ -26,11 +26,11 @@
   }
 
   body {
-    @apply bg-navy-950 text-gray-300 font-sans;
+    @apply bg-white text-gray-700 font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-white font-semibold tracking-tight;
+    @apply text-gray-900 font-semibold tracking-tight;
   }
 }
 
