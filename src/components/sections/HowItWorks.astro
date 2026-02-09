@@ -1,0 +1,50 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const steps = [
+  {
+    number: "01",
+    title: "Capture Leads",
+    description: "Embed customizable forms on your site. Every submission captures UTM parameters, GCLIDs, and contact details automatically.",
+  },
+  {
+    number: "02",
+    title: "Generate Quotes",
+    description: "Dynamic pricing calculates instant quotes using zones, mileage, tiers, and discounts. Leads get real numbers — fast.",
+  },
+  {
+    number: "03",
+    title: "Feed Signals Back",
+    description: "When a lead books, GoFuse fires conversion events with real revenue data back to Google Ads. The algorithm gets smarter with every booking.",
+  },
+];
+---
+
+<section class="py-16 md:py-24 bg-navy-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="How It Works"
+      title="Three Steps to Smarter Marketing"
+      subtitle="Close the loop between ad spend and real revenue in minutes, not months."
+    />
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {steps.map((step, i) => (
+        <div class="relative">
+          {/* Connector line */}
+          {i < steps.length - 1 && (
+            <div class="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-gradient-to-r from-accent-indigo to-accent-cyan opacity-30"></div>
+          )}
+
+          <div class="text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-accent-indigo to-accent-cyan text-white text-xl font-bold mb-6">
+              {step.number}
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+            <p class="text-gray-400 leading-relaxed max-w-sm mx-auto">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

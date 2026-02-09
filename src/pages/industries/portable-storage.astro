@@ -1,0 +1,129 @@
+---
+import Layout from "../../components/layout/Layout.astro";
+import SectionHeading from "../../components/ui/SectionHeading.astro";
+import Button from "../../components/ui/Button.astro";
+import CtaBanner from "../../components/sections/CtaBanner.astro";
+
+const painPoints = [
+  {
+    title: "Wasted Ad Spend on Unqualified Leads",
+    description: "You're paying for clicks that never turn into rentals. Without conversion data flowing back to Google, the algorithm can't tell a tire-kicker from a paying customer.",
+  },
+  {
+    title: "Manual Quote Follow-Up",
+    description: "Leads request quotes and wait hours or days for a response. By then, they've already called your competitor.",
+  },
+  {
+    title: "No Visibility Into What's Working",
+    description: "You know you're getting calls and emails, but you can't tie a booking back to the specific ad, keyword, or campaign that generated it.",
+  },
+];
+
+const solutions = [
+  {
+    title: "Feed Booking Data Back to Google Ads",
+    description: "When a container rental is booked, GoFuse automatically fires a conversion event with the actual revenue value. Google learns to find more customers like your best ones.",
+  },
+  {
+    title: "Instant Zone-Based Quotes",
+    description: "Visitors enter their delivery address and get an instant price based on your zone or mileage pricing — no waiting, no manual calculations.",
+  },
+  {
+    title: "Full Attribution from Click to Booking",
+    description: "Every lead carries its GCLID, UTM parameters, and source data through the entire pipeline. See exactly which campaigns generate booked revenue.",
+  },
+];
+
+const features = [
+  "Zone-based delivery pricing with Google Maps integration",
+  "Multi-container and duration-based quote calculations",
+  "Automated email & SMS follow-ups on new quotes",
+  "Lead pipeline: Inquiry → Quoted → Booked → Delivered",
+  "GCLID capture on every form submission",
+  "Conversion events with real booking revenue",
+];
+---
+
+<Layout title="Portable Storage Marketing — GoFuse" description="GoFuse helps portable storage companies capture leads, generate instant delivery quotes, and feed real booking data back to Google Ads.">
+  <!-- Hero -->
+  <section class="relative pt-32 pb-16 md:pt-44 md:pb-20 overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-accent-indigo/10 rounded-full blur-3xl"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-sm font-semibold uppercase tracking-widest gradient-text mb-4">Portable Storage</p>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Stop paying for clicks. Start paying for <span class="gradient-text">container rentals.</span>
+        </h1>
+        <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+          GoFuse captures leads, generates instant delivery quotes, and feeds real booking data back to Google Ads — so every ad dollar drives actual revenue.
+        </p>
+        <Button href="/get-started" size="lg">Get Started</Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="py-16 md:py-24 bg-navy-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="The Problem"
+        title="Sound Familiar?"
+        subtitle="Portable storage companies waste thousands on ads that can't distinguish a booked container from a bounced visitor."
+      />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {painPoints.map((point) => (
+          <div class="bg-surface border border-border rounded-xl p-6">
+            <h3 class="text-lg font-semibold text-white mb-3">{point.title}</h3>
+            <p class="text-gray-400 leading-relaxed">{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="The Solution"
+        title="GoFuse Closes the Loop"
+        subtitle="Connect your ad spend to real container bookings with signal-based marketing."
+      />
+      <div class="space-y-8">
+        {solutions.map((solution, i) => (
+          <div class="flex gap-6 items-start">
+            <div class="w-10 h-10 shrink-0 rounded-full bg-gradient-to-br from-accent-indigo to-accent-cyan flex items-center justify-center text-white font-bold">
+              {i + 1}
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-white mb-2">{solution.title}</h3>
+              <p class="text-gray-400 leading-relaxed">{solution.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 md:py-24 bg-navy-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Features"
+        title="Built for Portable Storage"
+      />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+        {features.map((feature) => (
+          <div class="flex items-start gap-3 bg-surface border border-border rounded-lg p-4">
+            <svg class="w-5 h-5 text-accent-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBanner />
+</Layout>

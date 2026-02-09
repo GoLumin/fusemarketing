@@ -1,0 +1,106 @@
+---
+import Button from "../ui/Button.astro";
+
+const navLinks = [
+  { label: "Features", href: "/features" },
+  { label: "Industries", href: "#", children: [
+    { label: "Portable Storage", href: "/industries/portable-storage" },
+    { label: "Landscaping", href: "/industries/landscaping" },
+    { label: "Home Services", href: "/industries/home-services" },
+    { label: "Legal & Professional", href: "/industries/legal-professional" },
+  ]},
+  { label: "Get Started", href: "/get-started" },
+  { label: "Contact", href: "/contact" },
+];
+---
+
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2 text-xl font-bold">
+        <span class="gradient-text">GoFuse</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        {navLinks.map((link) =>
+          link.children ? (
+            <div class="relative group">
+              <button class="text-gray-300 hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
+                {link.label}
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                <div class="bg-navy-800 border border-border rounded-lg py-2 min-w-48 shadow-xl">
+                  {link.children.map((child) => (
+                    <a href={child.href} class="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-navy-700 transition-colors">
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <a href={link.href} class="text-gray-300 hover:text-white transition-colors">
+              {link.label}
+            </a>
+          )
+        )}
+        <Button href="/get-started" size="sm">Get Started</Button>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white cursor-pointer" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-navy-900/95 backdrop-blur-md border-t border-border">
+    <div class="px-4 py-4 space-y-2">
+      {navLinks.map((link) =>
+        link.children ? (
+          <div>
+            <p class="px-3 py-2 text-sm font-semibold text-gray-400 uppercase tracking-wider">{link.label}</p>
+            {link.children.map((child) => (
+              <a href={child.href} class="block px-6 py-2 text-gray-300 hover:text-white transition-colors">
+                {child.label}
+              </a>
+            ))}
+          </div>
+        ) : (
+          <a href={link.href} class="block px-3 py-2 text-gray-300 hover:text-white transition-colors">
+            {link.label}
+          </a>
+        )
+      )}
+      <div class="pt-2">
+        <Button href="/get-started" size="sm" class="w-full">Get Started</Button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header")!;
+  const menuBtn = document.getElementById("mobile-menu-btn")!;
+  const mobileMenu = document.getElementById("mobile-menu")!;
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 20) {
+      header.classList.add("bg-navy-950/90", "backdrop-blur-md", "border-b", "border-border");
+    } else {
+      header.classList.remove("bg-navy-950/90", "backdrop-blur-md", "border-b", "border-border");
+    }
+  });
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>

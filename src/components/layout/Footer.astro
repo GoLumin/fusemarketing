@@ -1,0 +1,62 @@
+---
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  {
+    heading: "Product",
+    links: [
+      { label: "Features", href: "/features" },
+      { label: "Get Started", href: "/get-started" },
+      { label: "Contact", href: "/contact" },
+    ],
+  },
+  {
+    heading: "Industries",
+    links: [
+      { label: "Portable Storage", href: "/industries/portable-storage" },
+      { label: "Landscaping", href: "/industries/landscaping" },
+      { label: "Home Services", href: "/industries/home-services" },
+      { label: "Legal & Professional", href: "/industries/legal-professional" },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-border bg-navy-950">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <a href="/" class="text-xl font-bold gradient-text">GoFuse</a>
+        <p class="mt-3 text-gray-400 max-w-sm leading-relaxed">
+          Signal-based marketing that feeds real conversion data back to ad platforms — so every dollar works harder.
+        </p>
+      </div>
+
+      <!-- Link Columns -->
+      {footerLinks.map((group) => (
+        <div>
+          <h3 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+            {group.heading}
+          </h3>
+          <ul class="space-y-2">
+            {group.links.map((link) => (
+              <li>
+                <a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">&copy; {currentYear} GoFuse. All rights reserved.</p>
+      <a href="/get-started" class="text-sm gradient-text hover:opacity-80 transition-opacity">
+        Start feeding signals &rarr;
+      </a>
+    </div>
+  </div>
+</footer>

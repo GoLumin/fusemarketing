@@ -1,0 +1,57 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+
+const industries = [
+  {
+    title: "Portable Storage",
+    description: "Container rentals, delivery zones, and automated quote follow-ups — all feeding real booking data back to your ads.",
+    href: "/industries/portable-storage",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />`,
+  },
+  {
+    title: "Landscaping",
+    description: "Seasonal campaigns, service-area quoting, and attribution that shows which ads drive real jobs — not just form fills.",
+    href: "/industries/landscaping",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />`,
+  },
+  {
+    title: "Home Services",
+    description: "Multi-service lead forms, service-area pricing, and conversion tracking that feeds real job value back to Google.",
+    href: "/industries/home-services",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.42 15.17l-5.645-5.645a1.5 1.5 0 010-2.12l.88-.878a1.5 1.5 0 012.12 0L12 9.75l3.225-3.225a1.5 1.5 0 012.12 0l.879.879a1.5 1.5 0 010 2.12l-5.645 5.646a1.5 1.5 0 01-2.12 0z" />`,
+  },
+  {
+    title: "Legal & Professional",
+    description: "High-value lead capture, custom intake forms, and tracking that shows which campaigns bring cases — not just clicks.",
+    href: "/industries/legal-professional",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0012 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 01-2.031.352 5.988 5.988 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0l2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 01-2.031.352 5.989 5.989 0 01-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971z" />`,
+  },
+];
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Industries"
+      title="Built for Businesses That Need Leads"
+      subtitle="GoFuse works for any industry that generates leads and quotes — here are a few we specialize in."
+    />
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {industries.map((industry) => (
+        <a href={industry.href} class="group bg-surface border border-border rounded-xl p-6 hover:border-accent-indigo/50 transition-all hover:glow-sm">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent-indigo/20 to-accent-cyan/20 flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <Fragment set:html={industry.icon} />
+            </svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white mb-2 group-hover:gradient-text transition-colors">
+            {industry.title}
+          </h3>
+          <p class="text-sm text-gray-400 leading-relaxed mb-4">{industry.description}</p>
+          <span class="text-sm text-accent-cyan group-hover:underline">Learn more &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

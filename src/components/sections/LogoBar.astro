@@ -1,0 +1,26 @@
+---
+const integrations = [
+  { name: "Google Ads", icon: "M12 2L2 22h20L12 2zm0 4l7 14H5l7-14z" },
+  { name: "Google Maps", icon: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" },
+  { name: "Twilio", icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm0 3a7 7 0 110 14 7 7 0 010-14zm-2 4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm4 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm-4 4a1.5 1.5 0 100 3 1.5 1.5 0 000-3zm4 0a1.5 1.5 0 100 3 1.5 1.5 0 000-3z" },
+  { name: "Postmark", icon: "M2 4l10 7 10-7v14H2V4zm10 8.5L4 6v10h16V6l-8 6.5z" },
+];
+---
+
+<section class="py-12 md:py-16 border-y border-border">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <p class="text-center text-sm text-gray-500 uppercase tracking-widest mb-8">
+      Integrates with
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16">
+      {integrations.map((item) => (
+        <div class="flex items-center gap-2 text-gray-500 hover:text-gray-300 transition-colors">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d={item.icon} />
+          </svg>
+          <span class="text-sm font-medium">{item.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

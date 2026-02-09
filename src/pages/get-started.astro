@@ -1,0 +1,184 @@
+---
+import Layout from "../components/layout/Layout.astro";
+import SectionHeading from "../components/ui/SectionHeading.astro";
+import Button from "../components/ui/Button.astro";
+
+const steps = [
+  {
+    number: "01",
+    title: "Book a Demo",
+    description: "Fill out the form below and our team will walk you through GoFuse — tailored to your industry and use case.",
+  },
+  {
+    number: "02",
+    title: "We Configure Your Account",
+    description: "We set up your forms, pricing rules, automations, and conversion tracking. You don't need to be technical.",
+  },
+  {
+    number: "03",
+    title: "Launch & Optimize",
+    description: "Go live and start feeding real signals back to Google Ads. The longer you run, the smarter your campaigns get.",
+  },
+];
+
+const benefits = [
+  "Signal-based conversion tracking out of the box",
+  "Dynamic quote engine with zone & mileage pricing",
+  "Automated email, SMS, and webhook follow-ups",
+  "Full UTM and GCLID attribution on every lead",
+  "Dedicated onboarding and support",
+];
+
+const faqs = [
+  {
+    question: "What industries does GoFuse support?",
+    answer: "GoFuse works for any business that generates leads and quotes — portable storage, landscaping, home services, legal, professional services, and more. If you run ads and need to track what converts, GoFuse is built for you.",
+  },
+  {
+    question: "How does signal-based marketing work?",
+    answer: "When a lead fills out a form, GoFuse captures the Google Click ID (GCLID) and UTM parameters. When that lead is booked or becomes a customer, GoFuse fires a conversion event back to Google Ads with the actual revenue value. This teaches Google's algorithm what a real customer looks like — so it can find more of them.",
+  },
+  {
+    question: "What ad platforms are supported?",
+    answer: "Google Ads is fully supported today with GCLID capture and offline conversion imports. Meta Conversions API and additional platforms are on our roadmap and coming soon.",
+  },
+  {
+    question: "How long does it take to set up?",
+    answer: "Most accounts are fully configured and live within a few days. Our team handles the technical setup — forms, pricing rules, automations, and conversion tracking — so you can focus on running your business.",
+  },
+];
+
+const industries = [
+  "Portable Storage",
+  "Landscaping",
+  "Home Services (HVAC, Plumbing, Electrical)",
+  "Legal & Professional Services",
+  "Other",
+];
+---
+
+<Layout title="Get Started — GoFuse" description="Book a demo and see how GoFuse can connect your marketing to real revenue with signal-based conversion tracking.">
+  <!-- Hero -->
+  <section class="pt-32 pb-12 md:pt-44 md:pb-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="Get Started"
+        title="Get Started with GoFuse"
+        subtitle="See how signal-based marketing can transform your ad spend into real, trackable revenue."
+      />
+    </div>
+  </section>
+
+  <!-- Onboarding Steps -->
+  <section class="pb-16 md:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {steps.map((step, i) => (
+          <div class="relative text-center">
+            {i < steps.length - 1 && (
+              <div class="hidden md:block absolute top-8 left-[calc(50%+2rem)] w-[calc(100%-4rem)] h-px bg-gradient-to-r from-accent-indigo to-accent-cyan opacity-30"></div>
+            )}
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-accent-indigo to-accent-cyan text-white text-xl font-bold mb-6">
+              {step.number}
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">{step.title}</h3>
+            <p class="text-gray-400 leading-relaxed max-w-sm mx-auto">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits + Form -->
+  <section class="py-16 md:py-24 bg-navy-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Benefits -->
+        <div>
+          <h2 class="text-2xl md:text-3xl font-bold text-white mb-6">
+            Why teams choose GoFuse
+          </h2>
+          <div class="space-y-4 mb-8">
+            {benefits.map((benefit) => (
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-accent-cyan shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="text-gray-300">{benefit}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Demo Request Form -->
+        <div>
+          <div class="bg-surface border border-border rounded-xl p-6 md:p-8">
+            <h3 class="text-xl font-semibold text-white mb-6">Request a Demo</h3>
+            <form class="space-y-4">
+              <div>
+                <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  placeholder="you@company.com" />
+              </div>
+              <div>
+                <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Company</label>
+                <input type="text" id="company" name="company"
+                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors"
+                  placeholder="Your company" />
+              </div>
+              <div>
+                <label for="industry" class="block text-sm font-medium text-gray-300 mb-1">Industry</label>
+                <select id="industry" name="industry"
+                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white focus:outline-none focus:border-accent-indigo transition-colors">
+                  <option value="" class="text-gray-500">Select your industry</option>
+                  {industries.map((industry) => (
+                    <option value={industry}>{industry}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                <textarea id="message" name="message" rows="4"
+                  class="w-full px-4 py-3 bg-navy-800 border border-border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-accent-indigo transition-colors resize-none"
+                  placeholder="Tell us about your business and what you're looking for..."></textarea>
+              </div>
+              <Button variant="primary" class="w-full">Request Demo</Button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <SectionHeading
+        eyebrow="FAQ"
+        title="Frequently Asked Questions"
+      />
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <details class="group bg-surface border border-border rounded-xl">
+            <summary class="flex items-center justify-between cursor-pointer p-6 text-white font-semibold">
+              {faq.question}
+              <svg class="w-5 h-5 text-gray-400 shrink-0 ml-4 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+              {faq.answer}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

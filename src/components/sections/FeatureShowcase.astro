@@ -1,0 +1,76 @@
+---
+import SectionHeading from "../ui/SectionHeading.astro";
+import Button from "../ui/Button.astro";
+
+const features = [
+  {
+    eyebrow: "Lead Generation",
+    title: "Capture Every Lead, Automatically",
+    description: "Customizable multi-field forms with deduplication, status pipelines, and multi-campaign support. Every lead is tracked from first click to booked job.",
+    points: ["Custom fields & multi-step forms", "Lead deduplication", "Status pipeline tracking"],
+    gradient: "from-accent-indigo to-purple-500",
+  },
+  {
+    eyebrow: "Quote Engine",
+    title: "Dynamic Quotes That Close Deals",
+    description: "Real-time pricing with mileage-based, zone-based, and tiered calculations. Configurable fees and discounts turn browsers into buyers.",
+    points: ["Mileage-based pricing via Google Maps", "Zone-based & tiered pricing", "Dynamic discounts & configurable fees"],
+    gradient: "from-purple-500 to-accent-cyan",
+  },
+  {
+    eyebrow: "Conversion Tracking",
+    title: "Feed Real Revenue Back to Google",
+    description: "Automatically capture GCLIDs, fire conversion events on bookings, and send actual revenue data back to Google Ads. The algorithm learns what a real customer looks like.",
+    points: ["GCLID capture & attribution", "Automatic conversion events", "Revenue data sent to Google Ads"],
+    gradient: "from-accent-cyan to-accent-indigo",
+  },
+];
+---
+
+<section class="py-16 md:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <SectionHeading
+      eyebrow="Platform"
+      title="Everything You Need to Close the Loop"
+      subtitle="From lead capture to conversion tracking — GoFuse handles the full marketing pipeline."
+    />
+
+    <div class="space-y-16 md:space-y-24">
+      {features.map((feature, i) => (
+        <div class={`flex flex-col ${i % 2 === 1 ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-8 md:gap-16`}>
+          <!-- Visual -->
+          <div class="flex-1 w-full">
+            <div class={`bg-gradient-to-br ${feature.gradient} rounded-2xl p-px`}>
+              <div class="bg-navy-900 rounded-2xl p-8 md:p-12">
+                <div class="space-y-3">
+                  {feature.points.map((point) => (
+                    <div class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-accent-cyan shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span class="text-gray-300">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="flex-1">
+            <p class="text-sm font-semibold uppercase tracking-widest gradient-text mb-3">
+              {feature.eyebrow}
+            </p>
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">
+              {feature.title}
+            </h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              {feature.description}
+            </p>
+            <Button href="/features" variant="ghost" size="sm">Learn more &rarr;</Button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
